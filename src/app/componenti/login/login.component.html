@@ -32,7 +32,7 @@
         </mat-form-field>
         <button mat-raised-button type="submit" [disabled]="!accForm.valid">Crea Account</button>
       </form>
-      <p>Non hai ancora un account? <a routerLink="/registrazione">Registrati</a></p>
+      <p>Non hai ancora un account? <a [routerLink]="['/registrazione']">Registrati</a></p>
     </div>
   </div>
   
