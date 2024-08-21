@@ -4,68 +4,133 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 40px;
+    height: 100px;
+    border-radius: 14px;
+    background: linear-gradient(to right, #8ABBD5, #a8d0e6);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .header .date {
-    font-size: 14px;
-    color: #555;
+  .intestazione{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .intestazione .date{
+    margin-bottom: 40px;
+    color: rgb(227, 227, 227);
+  }
+  
+  .header .date, .header .corso {
+    font-size: 16px;
   }
   
   .header .welcome {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
   }
   
   .header .header-icon {
-    width: 50px;
-    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  
+
   .main-content {
     grid-area: content;
-    padding: 20px;
+    padding-top: 20px;
     display: grid;
     grid-template-areas:
       "avvisi lezioni"
       "esami esami";
     gap: 20px;
   }
-  
-  .avvisi {
+
+
+  .avvisi{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .avvisi h1, .lezioni h1, .esami h1{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .avvisi .flex-card{
     grid-area: avvisi;
     display: flex;
     justify-content: space-between;
   }
-  
-  .lezioni {
-    grid-area: lezioni;
-    background-color: #cce5ff;
-    padding: 15px;
-    border-radius: 10px;
+
+  .avvisi .card{
+    background-color: white !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    width: 80px;
+    border: 3px solid white;
+  }
+
+  .avvisi .card:hover, .esami .card:hover{
+    border: 3px solid #8ABBD5;
   }
   
-  .esami {
+  .lezioni .flex-card{
+    grid-area: lezioni;
+    background-color: #8ABBD5;
+    padding: 15px;
+    border-radius: 10px;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .lezioni .flex-card:hover{
+    background-color: #d1e0ff;
+  }
+
+  .esami{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .esami .flex-card{
     grid-area: esami;
     display: flex;
     justify-content: space-between;
   }
   
   .card {
-    background-color: #eef3ff;
+    background-color: #d1e0ff;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     flex: 1;
-    margin: 0 10px;
+    margin-right: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid #d1e0ff;
+    height: 75px;
   }
   
   button {
-    background-color: #4a90e2;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #8ABBD5;
     color: white;
-    padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
+    width: 80px;
   }
   
+  button:hover{
+    background-color: #488db3;
+  }

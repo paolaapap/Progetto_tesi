@@ -24,9 +24,8 @@ export class RegistrazioneComponent implements OnInit{
       nome: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern('^[a-zA-Z ]*$')]), // Solo lettere e spazi
       matricola: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]), //richiede esattamente 10cifre numeriche 
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8) // Almeno 8 caratteri
-      ])
-    })  
+      password: new FormControl('', [Validators.required, Validators.minLength(8)]) 
+    });  
   }
 
   onSubmit(){
