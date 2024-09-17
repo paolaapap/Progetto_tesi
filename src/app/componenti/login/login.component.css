@@ -4,6 +4,7 @@
     height: 100%;
     display: flex;
     font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
   }
   
   .left-panel {
@@ -59,19 +60,19 @@
     padding: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
   }
   
   .right-panel h2, .right-panel button {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-weight: 800;
     font-style: oblique;
   }
   
 
   .right-panel h2{
-    margin-bottom: 120px;
+    margin-bottom: 40px;
   }
 
   .right-panel form {
