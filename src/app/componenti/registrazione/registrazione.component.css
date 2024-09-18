@@ -64,13 +64,13 @@
   }
   
   .right-panel h2, .right-panel button {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     font-weight: 800;
     font-style: oblique;
   }
 
   .right-panel h2{
-    margin-bottom: 60px;
+    margin-bottom: 30px;
   }
 
   .right-panel form {

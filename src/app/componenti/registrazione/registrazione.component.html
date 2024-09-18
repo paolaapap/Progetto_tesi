@@ -11,16 +11,29 @@
       <h2>Crea Account</h2>
       <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="fill">
-          <mat-label>Nome e Cognome</mat-label>
+          <mat-label>Nome</mat-label>
           <input matInput formControlName="nome" required>
           <mat-error *ngIf="regForm.get('nome')?.hasError('required') && regForm.get('nome')?.touched">
-            Nome e Cognome è obbligatorio
+            Nome è obbligatorio
           </mat-error>
           <mat-error *ngIf="regForm.get('nome')?.hasError('minlength') && regForm.get('nome')?.touched">
-            Nome e Cognome deve avere almeno 3 caratteri
+            Nome deve avere almeno 3 caratteri
           </mat-error>
           <mat-error *ngIf="regForm.get('nome')?.hasError('pattern') && regForm.get('nome')?.touched">
-            Nome e Cognome può contenere solo lettere e spazi
+            Nome può contenere solo lettere e spazi
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Cognome</mat-label>
+          <input matInput formControlName="cognome" required>
+          <mat-error *ngIf="regForm.get('cognome')?.hasError('required') && regForm.get('cognome')?.touched">
+            Cognome è obbligatorio
+          </mat-error>
+          <mat-error *ngIf="regForm.get('cognome')?.hasError('minlength') && regForm.get('cognome')?.touched">
+            Cognome deve avere almeno 3 caratteri
+          </mat-error>
+          <mat-error *ngIf="regForm.get('cognome')?.hasError('pattern') && regForm.get('cognome')?.touched">
+            Cognome può contenere solo lettere e spazi
           </mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill">

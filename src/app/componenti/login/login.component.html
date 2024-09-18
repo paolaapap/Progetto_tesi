@@ -30,8 +30,8 @@
             Password deve contenere almeno 8 caratteri
           </mat-error>
         </mat-form-field>
-        <button mat-raised-button type="submit" [disabled]="!accForm.valid">Crea Account</button>
-        <mat-checkbox formControlName="isTeacher" [checked]="isChecked" (change)="toggleSingleSelectionIndicator()">
+        <button mat-raised-button type="submit" [disabled]="!accForm.valid">Accedi</button>
+        <mat-checkbox formControlName="is_professor" [checked]="isChecked" (change)="toggleSingleSelectionIndicator()">
           Accedi come Docente
         </mat-checkbox>
       </form>
