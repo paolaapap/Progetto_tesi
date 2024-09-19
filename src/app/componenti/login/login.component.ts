@@ -69,8 +69,8 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/home']);
         },
         error: (err) => {
-          this.snackBar.open('Errore durante il login. Riprova.', 'Chiudi', { duration: 3000 });
-          console.error('Errore login:', err);
+          const errorMessage = err.error.message || 'Errore durante il login. Riprova.';
+          this.snackBar.open(errorMessage, 'Chiudi', { duration: 3000 });
         }
       });
     }

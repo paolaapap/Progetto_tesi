@@ -59,7 +59,7 @@
     flex-direction: column;
   }
 
-  .avvisi h1, .lezioni h1, .esami h1{
+  .avvisi h1, .lezioni h1, .esami h1, .card h1{
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-size: 16px;
@@ -94,8 +94,12 @@
 
   .lezioni .flex-card:hover{
     background-color: #d1e0ff;
+    cursor: pointer;
   }
 
+  .lezioni h1:hover{
+    cursor: pointer;
+  }
   .esami{
     display: flex;
     flex-direction: column;
@@ -117,8 +121,15 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 3px solid #d1e0ff;
     height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   }
-  
+  .professor-theme .card:hover{
+    cursor: pointer;
+  }
+
   button {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
@@ -133,4 +144,73 @@
   
   button:hover{
     background-color: #488db3;
+  }
+
+  .professor-theme{
+    margin-top: 100px;
+  }
+
+  .card img{
+    width: 100px;
+    height: 100px;
+    margin-top: -20px;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.7));
+  }
+
+  .card h1{
+    line-height: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color:#8ABBD5;
+  }
+
+  .professor-theme .card {
+    transition: transform 0.3s ease; 
+  }
+  
+  .professor-theme .card:hover {
+    transform: scale(1.1); 
+  }
+
+  .due img{
+    width: 62px !important;
+    height: 62px !important;
+    margin-top: -4px;
+  }
+
+  .tre img{
+    width: 90px;
+    height: 90px;
+    margin-top: -3px;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5)) !important;
+  }
+  
+
+ 
+  .flex-card .card{
+    min-width: 136px !important;
+  }
+
+  .card-lezioni {
+    width: 250px;
+    max-height: 90px !important;
+  }
+
+  .card-lezioni h1{
+    margin-bottom: 0px;
+    color: black;
+    font-size: 15px;
+  }
+
+  .card-lezioni p{
+    color: grey;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow: hidden !important; 
+    text-overflow: ellipsis !important; 
+    white-space: nowrap !important;
+  }
+
+  .lezioni .flex-card{
+    max-height: 260px !important;
   }

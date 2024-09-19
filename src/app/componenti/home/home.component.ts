@@ -3,15 +3,16 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { AuthServiceService } from '../../Services/auth-service.service'; 
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  userType!: string;
 
   constructor(
     private authService: AuthServiceService,
@@ -24,6 +25,8 @@ export class HomeComponent implements OnInit {
       next: (response) => {
         if (!response.logged_in) {
           this.router.navigate(['/login']);
+        } else {
+          this.userType = response.user_type;
         }
       },
       error: (err) => {
@@ -44,5 +47,25 @@ export class HomeComponent implements OnInit {
         console.error('Errore logout:', err);
       }
     });
+  }
+
+  navigateToNuovoAvviso(): void {
+    this.router.navigate(['/home/nuovoavviso']);
+  }
+
+  navigateToNuovoAppello(): void {
+    this.router.navigate(['/home/nuovoappello']);
+  }
+
+  navigateToNuovoCorso(): void {
+    this.router.navigate(['/home/nuovocorso']);
+  }
+
+  navigateToNuovoMateriale(): void {
+    this.router.navigate(['/home/nuovomateriale']);
+  }
+
+  navigateToHome(): void{
+    this.router.navigate(['home']);
   }
 }
