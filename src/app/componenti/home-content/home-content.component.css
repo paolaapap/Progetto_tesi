@@ -43,26 +43,29 @@
     justify-content: center;
   }
 
-  .main-content {
+  .main-content{
     grid-area: content;
     padding-top: 20px;
     display: grid;
+    grid-template-columns: 2fr 1fr; 
+    grid-template-rows: 190px 150px;
     grid-template-areas:
       "avvisi lezioni"
-      "esami esami";
+      "esami lezioni"; 
     gap: 20px;
   }
-
 
   .avvisi{
     display: flex;
     flex-direction: column;
+    height: 120px !important;
   }
 
   .avvisi h1, .lezioni h1, .esami h1, .card h1{
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-size: 16px;
+    cursor: pointer;
   }
 
   .avvisi .flex-card{
@@ -74,13 +77,16 @@
   .avvisi .card{
     background-color: white !important;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 100px;
-    width: 80px;
+    height: 100px !important;
+    width: 80px !important;
     border: 3px solid white;
+    transition: transform 0.3s ease;
   }
 
   .avvisi .card:hover, .esami .card:hover{
     border: 3px solid #8ABBD5;
+    transform: scale(1.1);
+    cursor: pointer;
   }
   
   .lezioni .flex-card{
@@ -97,9 +103,6 @@
     cursor: pointer;
   }
 
-  .lezioni h1:hover{
-    cursor: pointer;
-  }
   .esami{
     display: flex;
     flex-direction: column;
@@ -109,6 +112,10 @@
     grid-area: esami;
     display: flex;
     justify-content: space-between;
+  }
+
+  .esami .card{
+    transition: transform 0.3s ease;
   }
   
   .card {
@@ -150,9 +157,9 @@
     margin-top: 100px;
   }
 
-  .card img{
-    width: 100px;
-    height: 100px;
+  .uno img{
+    width: 100px !important;
+    height: 100px !important;
     margin-top: -20px;
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.7));
   }
@@ -178,8 +185,8 @@
   }
 
   .tre img{
-    width: 90px;
-    height: 90px;
+    width: 90px !important;
+    height: 90px !important;
     margin-top: -3px;
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5)) !important;
   }
@@ -213,4 +220,38 @@
 
   .lezioni .flex-card{
     max-height: 260px !important;
+  }
+
+  .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .row img{
+    width: 30px !important;
+    height: 30px !important;
+    margin-right: 5px;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4)) !important;
+  }
+
+  .row h1{
+    margin-bottom: 0px;
+  }
+
+  .avvisi .card h1{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .avvisi .card p{
+    color: gray;
+    font-family: "Poppins", sans-serif;
+    display: -webkit-box; /* Crea un contenitore flessibile */
+    -webkit-box-orient: vertical; /* Dispone il contenuto verticalmente */
+    -webkit-line-clamp: 3; /* Troncamento dopo 3 righe */
+    overflow: hidden; /* Nasconde il testo che supera le 3 righe */
+    text-overflow: ellipsis; /* Aggiunge i puntini di sospensione */
+    max-width: 100px; /* Larghezza massima */
+    line-height: 1.4; /* Altezza della linea: puoi regolarla */
+    height: calc(1.6em * 3); /* Altezza totale per 3 righe */
   }

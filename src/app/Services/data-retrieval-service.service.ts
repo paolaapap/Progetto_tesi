@@ -17,6 +17,10 @@ export class DataRetrievalServiceService {
     return this.http.get('/api/fetchLezioni', {});
   }
   
+  fetchAvvisi(): Observable<any>{
+    return this.http.get('/api/fetchAvvisi', {});
+  }
+  
   nuovaLezione(data: any): Observable<any>{
     return this.http.post('/api/nuovaLezione', data);
   }

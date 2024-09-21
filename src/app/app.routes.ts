@@ -8,6 +8,10 @@ import { NuovoMaterialeComponent } from './componenti/nuovo-materiale/nuovo-mate
 import { NuovoAppelloComponent } from './componenti/nuovo-appello/nuovo-appello.component';
 import { NuovoCorsoComponent } from './componenti/nuovo-corso/nuovo-corso.component';
 import { LezioniComponent } from './componenti/lezioni/lezioni.component';
+import { AvvisiComponent } from './componenti/avvisi/avvisi.component';
+import { CorsiComponent } from './componenti/corsi/corsi.component';
+import { PrenotatiComponent } from './componenti/prenotati/prenotati.component';
+import { RisultatiComponent } from './componenti/risultati/risultati.component';
 
 export const routes: Routes = [
     {path: 'login', component: LoginComponent},
@@ -20,6 +24,10 @@ export const routes: Routes = [
           {path: 'nuovomateriale', component: NuovoMaterialeComponent},
           {path: 'nuovoappello', component: NuovoAppelloComponent},
           {path: 'nuovocorso', component: NuovoCorsoComponent},
-          {path: 'lezioni', component: LezioniComponent}
+          {path: 'lezioni', component: LezioniComponent},
+          {path: 'avvisi', component: AvvisiComponent},
+          {path: 'corsi', component: CorsiComponent},
+          {path: 'prenotati', component: PrenotatiComponent},
+          {path: 'risultati', component: RisultatiComponent}
         ]}
 ];

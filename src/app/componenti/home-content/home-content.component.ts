@@ -18,6 +18,8 @@ export class HomeContentComponent implements OnInit{
   userName!: string;
   lezioni: any[] = []; 
   ultimeLezioni: any[] = [];
+  avvisi: any[] = [];
+  ultimiAvvisi: any[] = [];
 
   constructor(
     private authService: AuthServiceService,
@@ -51,13 +53,26 @@ export class HomeContentComponent implements OnInit{
       });
 
       this.fetchLezioni();
+      this.fetchAvvisi();
   }
 
   fetchLezioni(): void {
     this.dataRetrievalService.fetchLessons().subscribe({
       next: (response) => {
         this.lezioni = response;
-        this.ultimeLezioni = this.lezioni.slice(-4);
+        this.ultimeLezioni = this.lezioni.slice(-3);
+      },
+      error: (err) => {
+        console.error('Errore recupero lezioni:', err);
+      }
+    });
+  }
+
+  fetchAvvisi(): void {
+    this.dataRetrievalService.fetchAvvisi().subscribe({
+      next: (response) => {
+        this.avvisi = response;
+        this.ultimiAvvisi = this.lezioni.slice(-3);
       },
       error: (err) => {
         console.error('Errore recupero lezioni:', err);
@@ -75,5 +90,9 @@ export class HomeContentComponent implements OnInit{
 
   navigateToLezioni(): void {
     this.router.navigate(['/home/lezioni']);
+  }
+
+  navigateToAvvisi(): void{
+    this.router.navigate(['/home/avvisi']);
   }
 }
